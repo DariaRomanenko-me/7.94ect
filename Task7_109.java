@@ -1,23 +1,21 @@
+package com.company;
+
 import java.util.Scanner;
 
-public class Task7_109 {
+public class Task7_94 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
-        int b = sc.nextInt();
+        int n = sc.nextInt();
 
-        System.out.println(NOD(a, b));
+        System.out.println(power(a,n));
     }
-
-
-    public static int NOD(int a, int b) {
-        while (a != b) {
-            if (a > b) {
-                a -= b;
-            } else {
-                b -= a;
-            }
+    static int power(int a, int n) {
+        if( n == 1) {
+            return a;
         }
-        return a;
+        else {
+            return power(a, n-1)*a;
+        }
     }
 }
