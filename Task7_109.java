@@ -2,20 +2,25 @@ package com.company;
 
 import java.util.Scanner;
 
-public class Task7_94 {
+public class Task7_109 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
-        int n = sc.nextInt();
+        int b = sc.nextInt();
 
-        System.out.println(power(a,n));
+        System.out.println(gdc(a, b));
     }
-    static int power(int a, int n) {
-        if( n == 1) {
+
+
+    public static int gdc(int a, int b) {
+        if( a == b) {
             return a;
         }
+        if (a > b) {
+            return gdc(b, a - b);
+        }
         else {
-            return power(a, n-1)*a;
+            return gdc(a, b - a);
         }
     }
 }
