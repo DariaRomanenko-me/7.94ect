@@ -1,3 +1,5 @@
+package com.company;
+
 import java.util.Scanner;
 
 public class Task7_94 {
@@ -5,10 +7,15 @@ public class Task7_94 {
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
         int n = sc.nextInt();
-        int z = 1;
-        for( int i = 0; i < n; i++) {
-            z *= a;
+
+        System.out.println(power(a,n));
+    }
+    static int power(int a, int n) {
+        if( n == 1) {
+            return a;
         }
-        System.out.println(z);
+        else {
+            return power(a, n-1)*a;
+        }
     }
 }
